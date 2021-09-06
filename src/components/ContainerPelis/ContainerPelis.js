@@ -20,7 +20,7 @@ export default class ContainerPelis extends Component {
 
     render(){
         return(
-            <div>
+            <div className='containerPelis'>
                 {this.state.peliculas.map((peliculas, index) => {
                     return(
                  <Pelis 
