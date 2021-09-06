@@ -29,7 +29,9 @@ export default class ContainerPelis extends Component {
                  overview={peliculas.overview}
                  key={index}
                  id={peliculas.id}
-                 backdrop_path={peliculas.backdrop_path}
+                 release_date={peliculas.release_date}
+                 vote_average={peliculas.vote_average}
+                 original_language={peliculas.original_language}
                  />   
                     )
                 })}
