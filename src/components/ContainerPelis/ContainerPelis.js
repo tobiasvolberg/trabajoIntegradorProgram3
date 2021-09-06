@@ -18,6 +18,14 @@ export default class ContainerPelis extends Component {
         .catch(error => console.log(error))
     }
 
+    eliminarPelicula(id){
+        const peliculasFiltradas = this.state.peliculas.filter(peliculas => peliculas.id !== id)
+        console.log(peliculasFiltradas);
+        this.setState({
+            peliculas: peliculasFiltradas
+        })
+    }
+
     render(){
         return(
             <div className='containerPelis'>
@@ -32,6 +40,7 @@ export default class ContainerPelis extends Component {
                  release_date={peliculas.release_date}
                  vote_average={peliculas.vote_average}
                  original_language={peliculas.original_language}
+                 eliminarPelicula={(id) => this.eliminarPelicula(id)}
                  />   
                     )
                 })}
