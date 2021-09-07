@@ -29,7 +29,7 @@ export default class ContainerPelis extends Component {
     render(){
         return(
             <div className='containerPelis'>
-                {this.state.peliculas.slice(0,10).map((peliculas, index) => {
+                {/* {this.state.peliculas.slice(0,10).map((peliculas, index) => {
                     return(
                  <Pelis 
                  title={peliculas.title}
@@ -43,8 +43,27 @@ export default class ContainerPelis extends Component {
                  eliminarPelicula={(id) => this.eliminarPelicula(id)}
                  />   
                     )
-                })}
-
+                })} */}
+                {this.state.peliculas === []?
+                <div class="loader"></div>:
+                this.state.peliculas.slice(0,10).map((peliculas,index) => {
+                  return(
+                      <Pelis 
+                      title={peliculas.title}
+                      poster_path={peliculas.poster_path}
+                      overview={peliculas.overview}
+                    key={index}
+                    id={peliculas.id}
+                    release_date={peliculas.release_date}
+                    vote_average={peliculas.vote_average}
+                    original_language={peliculas.original_language}
+                    eliminarPelicula={(id)=>this.eliminarPelicula(id)}
+                      />
+                  )  
+                })
+    
+            }
+                
             </div>
         )
     }
