@@ -29,7 +29,7 @@ export default class ContainerPelis extends Component {
     render(){
         return(
             <div className='containerPelis'>
-                {this.state.peliculas.map((peliculas, index) => {
+                {this.state.peliculas.slice(0,10).map((peliculas, index) => {
                     return(
                  <Pelis 
                  title={peliculas.title}
