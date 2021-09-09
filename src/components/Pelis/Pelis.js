@@ -26,7 +26,7 @@ export default class Pelis extends Component{
     render(){
         return(
             <div className='divPelis'>
-                <img alt='' src={`https://image.tmdb.org/t/p/w500/${this.props.poster_path}`}/>
+                <img alt='' src={`https://image.tmdb.org/t/p/w342/${this.props.poster_path}`}/>
                 <h1>{this.props.title}</h1>
                 <h4>{this.props.overview}</h4>
                 <button onClick={() => this.props.eliminarPelicula(this.props.id)}>Eliminar</button>
