@@ -12,7 +12,8 @@ export default class ContainerPelis extends Component {
             peliculasAgregadas:[],
             paginaActual: 1,
             claseDiv: "containerPelis",
-            texto: "Columnas"
+            texto: "Columnas",
+            orden: "ASC"
         }
     }
 
@@ -96,14 +97,31 @@ export default class ContainerPelis extends Component {
         }
     }
 
+    ordenar(){
+       if(this.state.orden === "ASC"){
+        this.setState({
+            peliculasFiltradas: this.state.peliculasFiltradas.sort((a,b)=> b.title.localeCompare(a.title)),
+            orden: "DESC"
+        })
+       } else {
+        this.setState({
+            peliculasFiltradas: this.state.peliculasFiltradas.sort((a,b)=> a.title.localeCompare(b.title)),
+            orden: "ASC"
+        })
+       }
+       
+        
+    }
+
     render(){
         return(
             <div className={this.state.claseDiv}>
                 <button onClick={() => this.verColumna()}>{this.state.texto}</button>
+                <button onClick={() => this.ordenar()}> Orden: {this.state.orden}</button>
             <FiltroPorNombre filtrarPorNombre={(nombreAFiltrar)=>this.filtrarPorNombre(nombreAFiltrar)}/>
                 {this.state.cargando ?
                 <div className="loader"></div>:
-                 this.state.peliculasFiltradas.length == 0 ?
+                 this.state.peliculasFiltradas.length === 0 ?
                     <h1>No se han encontrado resultados, pruebe otra busqueda</h1>:
                     this.state.peliculasFiltradas.map((peliculas,index) => {
                     return(
