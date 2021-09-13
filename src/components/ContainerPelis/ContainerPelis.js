@@ -22,10 +22,10 @@ export default class ContainerPelis extends Component {
         .then(response => response.json())
         .then(data => {
             this.setState({
-                peliculas: data.results.slice(0,10),
-                peliculasFiltradas:data.results.slice(0,10),
+                peliculas: data.results.slice(0,12),
+                peliculasFiltradas:data.results.slice(0,12),
                 cargando: false,
-                peliculasAgregadas:data.results.slice(10,20),
+                peliculasAgregadas:data.results.slice(12,20),
                 paginaActual: this.state.paginaActual + 1
             })
         }
@@ -115,32 +115,40 @@ export default class ContainerPelis extends Component {
 
     render(){
         return(
-            <div className={this.state.claseDiv}>
+            <React.Fragment> 
+                <div className="botones">
                 <button onClick={() => this.verColumna()}>{this.state.texto}</button>
                 <button onClick={() => this.ordenar()}> Orden: {this.state.orden}</button>
-            <FiltroPorNombre filtrarPorNombre={(nombreAFiltrar)=>this.filtrarPorNombre(nombreAFiltrar)}/>
-                {this.state.cargando ?
-                <div className="loader"></div>:
-                 this.state.peliculasFiltradas.length === 0 ?
-                    <h1>No se han encontrado resultados, pruebe otra busqueda</h1>:
-                    this.state.peliculasFiltradas.map((peliculas,index) => {
-                    return(
-                      <Pelis 
-                      title={peliculas.title}
-                      poster_path={peliculas.poster_path}
-                      overview={peliculas.overview}
-                        key={index}
-                        id={peliculas.id}
-                        release_date={peliculas.release_date}
-                        vote_average={peliculas.vote_average}
-                        original_language={peliculas.original_language}
-                        eliminarPelicula={(id)=>this.eliminarPelicula(id)}
-                      />
-                  )  
-                })
-            }
+                <FiltroPorNombre filtrarPorNombre={(nombreAFiltrar)=>this.filtrarPorNombre(nombreAFiltrar)}/>
+                </div>
+                <div className={this.state.claseDiv}>
+            
+                    {this.state.cargando ?
+                    <div className="loader"></div>:
+                    this.state.peliculasFiltradas.length === 0 ?
+                        <h1>No se han encontrado resultados, pruebe otra busqueda</h1>:
+                        this.state.peliculasFiltradas.map((peliculas,index) => {
+                        return(
+                        <Pelis 
+                        title={peliculas.title}
+                        poster_path={peliculas.poster_path}
+                        overview={peliculas.overview}
+                            key={index}
+                            id={peliculas.id}
+                            release_date={peliculas.release_date}
+                            vote_average={peliculas.vote_average}
+                            original_language={peliculas.original_language}
+                            eliminarPelicula={(id)=>this.eliminarPelicula(id)}
+                            orientacion={this.state.claseDiv}
+                        />
+                
+                     )  
+                   })
+             }
+                </div>
                 <button onClick={() => this.agregarPeliculas()}>Agregar Mas</button>
-            </div>
+
+            </React.Fragment>
         )
     }
 }

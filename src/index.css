@@ -20,17 +20,39 @@ code {
   align-items: flex-start;
 }
 
+.containerPelisTarjeta{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 25%;
+}
+
 .containerColumna{
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items:flex-start;
+  width: 100%;
+}
+
+.containerColumnaTarjeta{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items:flex-start;
+  width: 100%;
 }
 
 .divPelis{
-  width: 25%;
-  
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.containerColumnaTarjeta .dataContainer{
+  width: 75%;
 }
 
 .show {
@@ -53,4 +75,50 @@ code {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #3273d4;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #174c9b;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+button:hover {background-color: #4e84d4}
+
+button:active {
+  background-color: #4d85da;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+input[type=text] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url("https://www.w3schools.com/css/searchicon.png")	;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+
+.botones{
+  display: flex;
 }

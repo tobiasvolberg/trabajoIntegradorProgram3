@@ -24,8 +24,8 @@ export default class FiltroPorNombre extends Component{
     render(){
         return(
             <form onSubmit={(evento)=>this.prevenirSubmit(evento)}>
-                <label>Title:</label>
-                <input type='text' onChange={(evento)=> this.capturaInput(evento)}></input>
+                <label></label>
+                <input type='text' placeholder="Buscar..." onChange={(evento)=> this.capturaInput(evento)}></input>
             </form>
         )
     }
