@@ -103,7 +103,7 @@ export default class ContainerPelis extends Component {
             <FiltroPorNombre filtrarPorNombre={(nombreAFiltrar)=>this.filtrarPorNombre(nombreAFiltrar)}/>
                 {this.state.cargando ?
                 <div className="loader"></div>:
-                 this.state.peliculasFiltradas.lenght === [] ?
+                 this.state.peliculasFiltradas.length == 0 ?
                     <h1>No se han encontrado resultados, pruebe otra busqueda</h1>:
                     this.state.peliculasFiltradas.map((peliculas,index) => {
                     return(
