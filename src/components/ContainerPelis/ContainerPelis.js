@@ -146,7 +146,7 @@ export default class ContainerPelis extends Component {
                    })
              }
                 </div>
-                <button onClick={() => this.agregarPeliculas()}>Agregar Mas</button>
+                <button onClick={() => this.agregarPeliculas()}>Agregar Más</button>
 
             </React.Fragment>
         )

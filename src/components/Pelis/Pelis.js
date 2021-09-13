@@ -5,7 +5,7 @@ export default class Pelis extends Component{
         super(props)
         this.state ={
             clase: 'hide',
-            texto: 'ver mas'
+            texto: 'Ver Más'
         }
     }
 
@@ -13,12 +13,12 @@ export default class Pelis extends Component{
         if(this.state.clase === 'hide'){
             this.setState({
                 clase: 'show',
-                texto: 'Ver menos'
+                texto: 'Ver Menos'
             })
         }else{
             this.setState({
                 clase: 'hide',
-                texto:'Ver mas'
+                texto:'Ver Más'
             })
         }
     }
