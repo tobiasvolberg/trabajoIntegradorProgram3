@@ -20,6 +20,14 @@ code {
   align-items: flex-start;
 }
 
+.containerColumna{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .divPelis{
   width: 25%;
   

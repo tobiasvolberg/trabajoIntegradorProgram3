@@ -10,7 +10,9 @@ export default class ContainerPelis extends Component {
             peliculasFiltradas:[],
             cargando: true,
             peliculasAgregadas:[],
-            paginaActual: 1
+            paginaActual: 1,
+            claseDiv: "containerPelis",
+            texto: "Columnas"
         }
     }
 
@@ -80,10 +82,24 @@ export default class ContainerPelis extends Component {
     componentDidUpdate(){
         console.log(this.state.peliculasFiltradas)
     }   
+    verColumna(){
+        if(this.state.claseDiv === 'containerPelis'){
+            this.setState({
+                claseDiv: "containerColumna",
+                texto: 'Filas'
+            })
+        }else{
+            this.setState({
+                claseDiv: 'containerPelis',
+                texto:'Columnas'
+            })
+        }
+    }
 
     render(){
         return(
-            <div className='containerPelis'>
+            <div className={this.state.claseDiv}>
+                <button onClick={() => this.verColumna()}>{this.state.texto}</button>
             <FiltroPorNombre filtrarPorNombre={(nombreAFiltrar)=>this.filtrarPorNombre(nombreAFiltrar)}/>
                 {this.state.cargando ?
                 <div className="loader"></div>:
