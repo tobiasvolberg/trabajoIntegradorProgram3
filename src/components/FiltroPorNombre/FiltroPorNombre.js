@@ -23,7 +23,7 @@ export default class FiltroPorNombre extends Component{
 
     render(){
         return(
-            <form onSubmit={(evento)=>this.prevenirSubmit(evento)}>
+            <form  className='formBuscar' onSubmit={(evento)=>this.prevenirSubmit(evento)}>
                 <label></label>
                 <input type='text' placeholder="Buscar..." onChange={(evento)=> this.capturaInput(evento)}></input>
             </form>

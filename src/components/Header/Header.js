@@ -2,10 +2,12 @@ import React from 'react'
 
 function Header(){
     return(
-    <div>
-    <h1>TOJOJU</h1>
-    <h2>Ordenar DESC y ASC</h2>
+    <div className="header">
+        <nav> 
+    <h1 >TOJOJU</h1>
+    
     <label></label>
+        </nav>
     </div>
     )
 }

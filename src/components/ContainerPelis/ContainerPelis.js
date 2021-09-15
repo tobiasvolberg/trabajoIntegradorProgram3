@@ -117,8 +117,8 @@ export default class ContainerPelis extends Component {
         return(
             <React.Fragment> 
                 <div className="botones">
-                <button onClick={() => this.verColumna()}>{this.state.texto}</button>
-                <button onClick={() => this.ordenar()}> Orden: {this.state.orden}</button>
+                <button  className='botonColumna' onClick={() => this.verColumna()}>{this.state.texto}</button>
+                <button  className='botonOrden' onClick={() => this.ordenar()}> Orden: {this.state.orden}</button>
                 <FiltroPorNombre filtrarPorNombre={(nombreAFiltrar)=>this.filtrarPorNombre(nombreAFiltrar)}/>
                 </div>
                 <div className={this.state.claseDiv}>

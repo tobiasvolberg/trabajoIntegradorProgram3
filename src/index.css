@@ -51,7 +51,7 @@ code {
   margin-bottom: 10px;
   border: 2px solid #3498db;
   border-radius: 10px;
-  border-width: 5px;
+  border-width: 8px;
 }
 
 .containerColumnaTarjeta .dataContainer{
@@ -124,4 +124,46 @@ input[type=text]:focus {
 
 .botones{
   display: flex;
+}
+
+.header{
+  background-color: #42689e;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.botonColumna{
+  z-index: 1000;
+  position: fixed;
+  top: 11px;
+
+}
+
+.botonOrden{
+  z-index: 1000;
+  position: fixed;
+  left: 15%;
+  top: 11px;
+}
+
+.formBuscar{
+  z-index: 1000;
+  position: fixed;
+  left: 81%;
+  top: 11px;
+
+}
+
+.containerPelis{
+  margin-top: 100px;
+}
+
+.containerPelisTarjeta img {
+  width: 100%;
+}
+
+.botonEliminar{
+  margin-bottom: 20px;
 }
