@@ -34,7 +34,7 @@ code {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
-  align-items:flex-start;
+  align-items:center;
   width: 100%;
   margin-top: 100px;
 }
@@ -43,8 +43,8 @@ code {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  align-items:flex-start;
-  width: 100%;
+  align-items: center;
+  width: 97%;
 }
 
 .divPelis{
@@ -133,19 +133,20 @@ input[type=text]:focus {
   position: fixed;
   top: 0;
   z-index: 999;
+  color: white;
 }
 
 .botonColumna{
   z-index: 1000;
   position: fixed;
   top: 11px;
-
+  margin-left: 4%;
 }
 
 .botonOrden{
   z-index: 1000;
   position: fixed;
-  left: 15%;
+  left: 12%;
   top: 11px;
 }
 
@@ -159,6 +160,8 @@ input[type=text]:focus {
 
 .containerPelis{
   margin-top: 100px;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 .containerPelisTarjeta img {
@@ -167,4 +170,16 @@ input[type=text]:focus {
 
 .botonEliminar{
   margin-bottom: 20px;
+}
+
+.footer{
+  background-color: #42689e;
+  width: 100%;
+  bottom: 0;
+  position: relative;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-top: 3%;
+  z-index: 999;
+  color: white;
 }

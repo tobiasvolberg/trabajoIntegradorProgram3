@@ -12,7 +12,7 @@ export default class ContainerPelis extends Component {
             peliculasAgregadas:[],
             paginaActual: 1,
             claseDiv: "containerPelis",
-            texto: "Columnas",
+            texto: "Filas",
             orden: "ASC"
         }
     }
@@ -87,12 +87,12 @@ export default class ContainerPelis extends Component {
         if(this.state.claseDiv === 'containerPelis'){
             this.setState({
                 claseDiv: "containerColumna",
-                texto: 'Filas'
+                texto: 'Columnas'
             })
         }else{
             this.setState({
                 claseDiv: 'containerPelis',
-                texto:'Columnas'
+                texto:'Filas'
             })
         }
     }
