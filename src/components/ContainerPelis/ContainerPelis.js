@@ -129,7 +129,7 @@ export default class ContainerPelis extends Component {
                     {this.state.cargando ?
                     <div className="loader"></div>:
                     this.state.peliculasFiltradas.length === 0 ?
-                        <h1>No se han encontrado resultados, pruebe otra busqueda</h1>:
+                        <h1 className='noResultado'>No se han encontrado resultados, pruebe otra busqueda</h1>:
                         this.state.peliculasFiltradas.map((peliculas,index) => {
                         return(
                         <Pelis 
