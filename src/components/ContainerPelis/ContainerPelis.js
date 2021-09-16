@@ -21,13 +21,16 @@ export default class ContainerPelis extends Component {
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=e213b0057b8f5a50ca80f34e219debc4&language=en-US&page=${this.state.paginaActual}`)
         .then(response => response.json())
         .then(data => {
-            this.setState({
-                peliculas: data.results.slice(0,12),
-                peliculasFiltradas:data.results.slice(0,12),
-                cargando: false,
-                peliculasAgregadas:data.results.slice(12,20),
-                paginaActual: this.state.paginaActual + 1
-            })
+            setTimeout(()=>{
+                this.setState({
+                    peliculas: data.results.slice(0,12),
+                    peliculasFiltradas:data.results.slice(0,12),
+                    cargando: false,
+                    peliculasAgregadas:data.results.slice(12,20),
+                    paginaActual: this.state.paginaActual + 1
+                })
+            },1000)
+            
         }
         )
         .catch(error => console.log(error))
@@ -62,8 +65,8 @@ export default class ContainerPelis extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({
-                    peliculas: [...data.results.slice(0,10), ...this.state.peliculas],
-                    peliculasFiltradas: [...data.results.slice(0,10), ...this.state.peliculasFiltradas],
+                    peliculas: [...this.state.peliculas,...data.results.slice(0,10)],
+                    peliculasFiltradas: [ ...this.state.peliculasFiltradas,...data.results.slice(0,10)],
                     cargando: false,
                     peliculasAgregadas:data.results.slice(10,20),
                     paginaActual: this.state.paginaActual + 1
